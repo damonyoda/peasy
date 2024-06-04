@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users
+  resources :daily_records, only: [:index]
 end

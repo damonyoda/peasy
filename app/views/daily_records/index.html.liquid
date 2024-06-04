@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Records</title>
+  <style>
+    /* Body styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    /* Header styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #343a40;
+      color: #ffffff;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    /* Button container styles */
+    .button-container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .button-container button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #28a745;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .button-container button:hover {
+      background-color: #218838;
+    }
+
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #ffffff;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    th {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <div class="header">
+    <h1>Daily Record Stats</h1>
+  </div>
+
+  <!-- Table of daily records -->
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Male Count</th>
+        <th>Female Count</th>
+        <th>Male Average Age</th>
+        <th>Female Average Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign row_number = 1 %}
+      {% for rcd in daily_records %}
+        <tr>
+          <td>{{ row_number }}</td>
+          <td>{{ rcd.date }}</td>
+          <td>{{ rcd.male_count }}</td>
+          <td>{{ rcd.female_count }}</td>
+          <td>{{ rcd.male_avg_age }}</td>
+          <td>{{ rcd.female_avg_age }}</td>
+        </tr>
+        {% assign row_number = row_number | plus: 1 %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="button-container">
+    <button type="button" onclick="navigateToUsers()">Users</button>
+  </div>
+
+  <!-- Button container -->
+    <script>
+    function navigateToUsers() {
+      window.location.href = '/users';
+    }
+  </script>
+
+</body>
+</html>
