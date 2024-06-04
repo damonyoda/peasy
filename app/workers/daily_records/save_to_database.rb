@@ -22,6 +22,8 @@ module DailyRecords
                 male_avg_age: m_average_age,
                 female_avg_age: f_average_age
             )
+
+            Rails.cache.clear
         end
         
       
