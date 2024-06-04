@@ -12,3 +12,7 @@ default: &default
 development:
   <<: *default
   database: peasy
+
+test:
+  <<: *default
+  database: peasy_test
