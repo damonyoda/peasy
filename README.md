@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Dependancies
+ruby  - 3.2.2
+rails - 7.0.4
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Open a terminal and run "redis-server" to start redis
+2. Open another terminal and run "sidekiq -C config/sidekiq.yml" to start sidekiq
+3. Open another terminal and run "rails s" to start the rails server and navigate to "http://127.0.0.1:3000/users" to view  the page
+4. Run 'rails test' to run simple test
