@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     def destroy
       @user.destroy
       # Update DailyRecord count
-      update_daily_record_count(@user.gender)
+      update_daily_record_count(@user)
       render json: { message: "user has been removed successfully"}
     end
   
@@ -24,12 +24,12 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
   
-    def update_daily_record_count(gender)
-      daily_record = DailyRecord.find_by(date: Date.today)
+    def update_daily_record_count(user)
+      daily_record = DailyRecord.find_by(date: user.created_at.to_date)
       if daily_record
-        if gender == 'male'
+        if user.gender == 'male'
           daily_record.update(male_count: daily_record.male_count - 1)
-        elsif gender == 'female'
+        elsif user.gender == 'female'
           daily_record.update(female_count: daily_record.female_count - 1)
         end
       end
