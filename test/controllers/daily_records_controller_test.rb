@@ -1,7 +1,12 @@
 require "test_helper"
 
-class DailyRecordsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+class DailyRecordsControllerTest < ActionController::TestCase
+    fixtures :users, :daily_records
+
+    test "should get index" do
+        get :index
+        assert_response :success
+        assert_not_nil assigns(:daily_records)
+    end
+
 end
