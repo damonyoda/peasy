@@ -2,3 +2,8 @@ health_checker:
   every: '1h' 
   class: Health::Checker
   description: 'Check Scheduler'
+
+import_users:
+  every: '1h' 
+  class: Users::Importer
+  description: 'Retrieve random 20 users'
