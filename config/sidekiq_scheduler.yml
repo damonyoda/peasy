@@ -1,0 +1,4 @@
+health_checker:
+  every: '1h' 
+  class: Health::Checker
+  description: 'Check Scheduler'
