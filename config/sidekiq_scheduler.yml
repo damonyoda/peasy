@@ -7,3 +7,8 @@ import_users:
   every: '1h' 
   class: Users::Importer
   description: 'Retrieve random 20 users'
+
+daily_record_job:
+  cron: '59 23 * * *'  # Runs at 11:59 PM every day
+  class: DailyRecordWorker
+  description: 'Insert male & female count into db'
