@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       @user.destroy
       # Update DailyRecord count
       update_daily_record_count(@user.gender)
+      render json: { message: "user has been removed successfully"}
     end
   
     private

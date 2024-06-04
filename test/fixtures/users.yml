@@ -1,15 +1,29 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  uuid: MyString
-  gender: MyString
-  name: MyString
-  location: MyString
-  age: 1
+  uuid: uuid1
+  gender: 'male'
+  name: {"last": "Doe", "first": "John", "title": "Mr"}
+  location: {"city": "Tammela", "state": "Lapland", "street": "test1"}
+  age: 30
 
 two:
-  uuid: MyString
-  gender: MyString
-  name: MyString
-  location: MyString
-  age: 1
+  uuid: uuid2
+  gender: 'female'
+  name: {"last": "Doe", "first": "Jane", "title": "Ms"}
+  location: {"city": "Tammela", "state": "Lapland", "street": "test2"}
+  age: 20
+
+three:
+  uuid: uuid3
+  gender: 'male'
+  name: {"last": "Doe", "first": "Joseph", "title": "Mr"}
+  location: {"city": "Tammela", "state": "Lapland", "street": "test3"}
+  age: 25
+
+four:
+  uuid: uuid4
+  gender: 'male'
+  name: {"last": "Doe", "first": "Jaz", "title": "Mr"}
+  location: {"city": "Tammela", "state": "Lapland", "street": "test4"}
+  age: 45
